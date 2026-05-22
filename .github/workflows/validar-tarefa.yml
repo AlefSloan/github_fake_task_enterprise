@@ -1,0 +1,27 @@
+name: Validar tarefa
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validar-tarefa:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar teste da tarefa
+        env:
+          TASK_BRANCH: ${{ github.head_ref }}
+        run: npm test

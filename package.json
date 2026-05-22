@@ -1,0 +1,9 @@
+{
+  "name": "github_fake_task_enterprise",
+  "version": "1.0.0",
+  "description": "Oficina prática de Git e GitHub com tarefas isoladas para alunos iniciantes.",
+  "private": true,
+  "scripts": {
+    "test": "node scripts/validar-tarefa.js"
+  }
+}
